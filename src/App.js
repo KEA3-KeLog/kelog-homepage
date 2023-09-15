@@ -33,7 +33,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/":
+      case "/team":
         title = "";
         metaDescription = "";
         break;
@@ -57,7 +57,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/" element={<Frame />} />
+      <Route path="/team" element={<Frame />} />
     </Routes>
   );
 }

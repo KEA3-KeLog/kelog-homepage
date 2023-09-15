@@ -9,7 +9,6 @@
 .ourWork {
   top: 203px;
   left: 301px;
-  font-size: var(--font-size-45xl);
   display: inline-block;
   width: 428px;
   height: 75px;
@@ -26,58 +25,60 @@
   margin: 0;
 }
 .div {
-  left: 1412px;
   cursor: pointer;
 }
 .b,
-.div,
-.div1 {
-  position: absolute;
-  top: 47px;
+.div {
+  position: relative;
   display: inline-block;
   width: 81px;
   height: 38px;
+  flex-shrink: 0;
 }
-.div1 {
-  left: 1569px;
-  cursor: pointer;
-}
-.b {
-  left: 1727px;
-}
-.figmaLogoIcon1472891,
-.lbjNotion01Icon {
+.parent {
   position: absolute;
-  top: 540px;
-  left: 297px;
+  top: 47px;
+  right: 113px;
+  width: 395px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 76px;
+  font-size: var(--font-size-5xl);
+}
+.blogItem {
+  position: absolute;
+  top: 546px;
+  left: 810px;
+  border-radius: 50%;
+  width: 300px;
+  height: 294px;
+}
+.icon,
+.lbjNotion01Icon {
+  position: relative;
   width: 308.99px;
   height: 308px;
   object-fit: cover;
   cursor: pointer;
 }
-.figmaLogoIcon1472891 {
-  left: 1315px;
+.icon {
   width: 308px;
 }
-.blogItem,
-.icon {
+.lbjNotion01Parent {
   position: absolute;
-}
-.blogItem {
-  top: 546px;
-  left: 810px;
-  border-radius: 50%;
-  background-color: var(--color-gainsboro);
-  width: 300px;
-  height: 294px;
-}
-.icon {
+  width: calc(100% - 601.01px);
   top: 540px;
-  left: 806px;
-  width: 308px;
-  height: 308px;
-  object-fit: cover;
-  cursor: pointer;
+  right: 300.01px;
+  left: 301px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 209px;
 }
 .blog {
   position: relative;
@@ -86,7 +87,7 @@
   height: 1080px;
   overflow-y: auto;
   text-align: left;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-45xl);
   color: var(--color-black);
   font-family: var(--font-k2d);
 }

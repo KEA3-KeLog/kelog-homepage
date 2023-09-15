@@ -9,73 +9,62 @@
 .p {
   margin: 0;
 }
-.div1 {
-  position: absolute;
-  left: 1411px;
+.div {
   cursor: pointer;
 }
 .b,
-.div1,
-.div2 {
-  top: 47px;
+.div {
+  position: relative;
   display: inline-block;
   width: 81px;
   height: 38px;
+  flex-shrink: 0;
 }
-.b {
+.parent {
   position: absolute;
-  left: 1569px;
+  top: 47px;
+  right: 112px;
+  width: 397px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.frameChild {
+  position: relative;
+  background-color: var(--color-gainsboro);
+  width: 381px;
+  height: 419px;
+}
+.rectangleParent {
+  width: calc(100% - 261px);
+  top: 540px;
+  right: 111px;
+  left: 150px;
+  height: 419px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.div2,
+.div3,
+.rectangleParent {
+  position: absolute;
 }
 .div2 {
-  left: 1727px;
-  cursor: pointer;
-}
-.child,
-.div2,
-.item {
-  position: absolute;
-}
-.child {
-  top: 540px;
-  left: 150px;
-  background-color: var(--color-gainsboro);
-  width: 381px;
-  height: 419px;
-}
-.item {
-  left: 576px;
-}
-.inner,
-.item,
-.rectangleDiv {
-  top: 540px;
-  background-color: var(--color-gainsboro);
-  width: 381px;
-  height: 419px;
-}
-.inner {
-  position: absolute;
-  left: 1002px;
-}
-.rectangleDiv {
-  left: 1428px;
-}
-.div3,
-.div4,
-.rectangleDiv {
-  position: absolute;
-}
-.div3 {
   top: 187px;
   left: 147px;
   font-size: var(--font-size-45xl);
 }
-.div4 {
+.div3 {
   top: 310px;
   left: 150px;
   font-size: 40px;
 }
-.div {
+.team {
   position: relative;
   background-color: var(--color-white);
   width: 100%;

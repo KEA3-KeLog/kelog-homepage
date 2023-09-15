@@ -14,27 +14,31 @@ const Frame = () => {
   }, [navigate]);
 
   return (
-    <div className={styles.div}>
+    <div className={styles.team}>
       <img
         className={styles.kelogLogo2Icon}
         alt=""
         src="/kelog-logo-2@2x.png"
       />
-      <div className={styles.div1} onClick={onTextClick}>
-        <p className={styles.p}>팀 소개</p>
+      <div className={styles.parent}>
+        <div className={styles.div} onClick={onTextClick}>
+          <p className={styles.p}>팀 소개</p>
+        </div>
+        <b className={styles.b}>
+          <p className={styles.p}>사람들</p>
+        </b>
+        <div className={styles.div} onClick={onText2Click}>
+          <p className={styles.p}>작업물</p>
+        </div>
       </div>
-      <b className={styles.b}>
-        <p className={styles.p}>사람들</p>
-      </b>
-      <div className={styles.div2} onClick={onText2Click}>
-        <p className={styles.p}>작업물</p>
+      <div className={styles.rectangleParent}>
+        <div className={styles.frameChild} />
+        <div className={styles.frameChild} />
+        <div className={styles.frameChild} />
+        <div className={styles.frameChild} />
       </div>
-      <div className={styles.child} />
-      <div className={styles.item} />
-      <div className={styles.inner} />
-      <div className={styles.rectangleDiv} />
-      <div className={styles.div3}>함께하는 사람들</div>
-      <div className={styles.div4}>
+      <div className={styles.div2}>함께하는 사람들</div>
+      <div className={styles.div3}>
         <p className={styles.p}>
           조직의 위대함은 개인 혼자서는 불가능한 일을 가능하게 만드는 것에
           있습니다.

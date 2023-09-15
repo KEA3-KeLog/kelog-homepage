@@ -11,37 +11,37 @@
 }
 .b,
 .div {
-  top: 47px;
-  height: 38px;
-}
-.b {
-  position: absolute;
-  left: 1411px;
+  position: relative;
   display: inline-block;
   width: 96px;
+  height: 38px;
+  flex-shrink: 0;
 }
 .div {
-  left: 1569px;
   width: 81px;
   cursor: pointer;
 }
-.div,
-.div1,
-.kelog {
+.kelog,
+.parent {
   position: absolute;
-  display: inline-block;
 }
-.div1 {
+.parent {
   top: 47px;
-  left: 1727px;
-  width: 81px;
+  right: 111px;
+  width: 398px;
   height: 38px;
-  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 70px;
 }
 .kelog {
   top: 226px;
   left: 150px;
   font-size: var(--font-size-45xl);
+  display: inline-block;
   font-family: var(--font-inter);
   width: 1071px;
   height: 100px;
