@@ -1,0 +1,88 @@
+.kelogLogo2Icon {
+  position: absolute;
+  top: 29px;
+  left: 150px;
+  width: 150px;
+  height: 56px;
+  object-fit: cover;
+}
+.p {
+  margin: 0;
+}
+.div1 {
+  position: absolute;
+  left: 1411px;
+  cursor: pointer;
+}
+.b,
+.div1,
+.div2 {
+  top: 47px;
+  display: inline-block;
+  width: 81px;
+  height: 38px;
+}
+.b {
+  position: absolute;
+  left: 1569px;
+}
+.div2 {
+  left: 1727px;
+  cursor: pointer;
+}
+.child,
+.div2,
+.item {
+  position: absolute;
+}
+.child {
+  top: 540px;
+  left: 150px;
+  background-color: var(--color-gainsboro);
+  width: 381px;
+  height: 419px;
+}
+.item {
+  left: 576px;
+}
+.inner,
+.item,
+.rectangleDiv {
+  top: 540px;
+  background-color: var(--color-gainsboro);
+  width: 381px;
+  height: 419px;
+}
+.inner {
+  position: absolute;
+  left: 1002px;
+}
+.rectangleDiv {
+  left: 1428px;
+}
+.div3,
+.div4,
+.rectangleDiv {
+  position: absolute;
+}
+.div3 {
+  top: 187px;
+  left: 147px;
+  font-size: var(--font-size-45xl);
+}
+.div4 {
+  top: 310px;
+  left: 150px;
+  font-size: 40px;
+}
+.div {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-k2d);
+}

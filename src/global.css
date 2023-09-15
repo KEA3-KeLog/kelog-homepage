@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-k2d: K2D;
+
+  /* font sizes */
+  --font-size-45xl: 64px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gainsboro: #d9d9d9;
+}
