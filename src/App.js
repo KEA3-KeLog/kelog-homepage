@@ -1,64 +1,23 @@
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
-import Main from "./pages/Main";
-import Blog from "./pages/Blog";
-import Frame from "./pages/Frame";
-import { useEffect } from "react";
+/* eslint-disable */
+
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import MainNav from './MainNav';
+import MainPage from './pages/MainPage';
+import Blog from './pages/Blog';
 
 function App() {
-  const action = useNavigationType();
-  const location = useLocation();
-  const pathname = location.pathname;
-
-  useEffect(() => {
-    if (action !== "POP") {
-      window.scrollTo(0, 0);
-    }
-  }, [action, pathname]);
-
-  useEffect(() => {
-    let title = "";
-    let metaDescription = "";
-
-    switch (pathname) {
-      case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/blog":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/team":
-        title = "";
-        metaDescription = "";
-        break;
-    }
-
-    if (title) {
-      document.title = title;
-    }
-
-    if (metaDescription) {
-      const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]'
-      );
-      if (metaDescriptionTag) {
-        metaDescriptionTag.content = metaDescription;
-      }
-    }
-  }, [pathname]);
-
   return (
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/team" element={<Frame />} />
-    </Routes>
+    <div className="App">
+      <MainNav />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/members" element={<div>Members임</div>} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="*" element={<div>없는페이지임</div>} />
+      </Routes>
+    </div>
   );
 }
+
 export default App;

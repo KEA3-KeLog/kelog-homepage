@@ -1,93 +1,44 @@
-.blogChild,
+
 .ourWork {
-  position: absolute;
-  top: 457px;
-  left: 0;
-  width: 1920px;
-  height: 623px;
+  color: #212529;
+  font-stretch: normal;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  line-height: 1.32;
+  font-size: 50px;
+  margin-top: 90px;
 }
-.ourWork {
-  top: 203px;
-  left: 301px;
-  display: inline-block;
-  width: 428px;
-  height: 75px;
+.subtitle {
+  color: #212529;
+  font-size: 20px;
+  letter-spacing: -1.5px;
+  line-height: 1.6;
+  margin-top: 40px;
 }
-.kelogLogo1Icon {
-  position: absolute;
-  top: 29px;
-  left: 150px;
-  width: 150px;
-  height: 56px;
-  object-fit: cover;
-}
-.p {
-  margin: 0;
-}
-.div {
-  cursor: pointer;
-}
-.b,
-.div {
-  position: relative;
-  display: inline-block;
-  width: 81px;
-  height: 38px;
-  flex-shrink: 0;
-}
-.parent {
-  position: absolute;
-  top: 47px;
-  right: 113px;
-  width: 395px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 76px;
-  font-size: var(--font-size-5xl);
-}
-.blogItem {
-  position: absolute;
-  top: 546px;
-  left: 810px;
-  border-radius: 50%;
-  width: 300px;
-  height: 294px;
-}
-.icon,
+
+
+.figmaLogoIcon1472891,
 .lbjNotion01Icon {
-  position: relative;
+  position: absolute;
+  top: 540px;
+  left: 200px;
   width: 308.99px;
   height: 308px;
   object-fit: cover;
   cursor: pointer;
 }
-.icon {
+.figmaLogoIcon1472891 {
+  left: 1200px;
   width: 308px;
 }
-.lbjNotion01Parent {
+
+.icon {
   position: absolute;
-  width: calc(100% - 601.01px);
   top: 540px;
-  right: 300.01px;
-  left: 301px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 209px;
+  left:700px;
+  width: 308px;
+  height: 308px;
+  object-fit: cover;
+  cursor: pointer;
 }
-.blog {
-  position: relative;
-  background-color: var(--color-white);
-  width: 100%;
-  height: 1080px;
-  overflow-y: auto;
-  text-align: left;
-  font-size: var(--font-size-45xl);
-  color: var(--color-black);
-  font-family: var(--font-k2d);
-}
+

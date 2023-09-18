@@ -1,25 +1,24 @@
 /* eslint-disable */
 
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import logo from './img/logo.png';
+import logoNav from './img/logo-nav.png';
 
 function MainNav() {
     // 페이지 이동 함수
     let navigate = useNavigate();
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg">
             <Container>
                 <Navbar.Brand onClick={() => { navigate('/') }}>
                     <img
                         alt=""
-                        src={logo}
-                        width="27"
+                        src={logoNav}
+                        width="100"
                         height="30"
                         className="d-inline-block align-top"
-                    />
-                    {' '}KeLog                
+                    />        
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
