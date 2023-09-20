@@ -128,6 +128,7 @@ body {
 
 .main-page_support {
   width: 100%;
+  padding-bottom: 80px;
 }
 
 .main-page_support-title {
@@ -149,6 +150,44 @@ body {
   margin-top: 20px;
 }
 
+.main-page_support-item-box {
+  column-count: 4;
+  column-rule: 1px dotted gray;
+  column-gap: 40px;
+}
+
+.main-page_support-item {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-page_support-item-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px 0 10px 0;
+}
+
+.main-page_banner-wrap {
+  width: 100%;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.main-page_banner-img {
+  max-width: 100%;
+  max-height: 15%;
+  filter: brightness(60%);
+}
+
+.main-page_banner-text {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: -1.5px;
+  color: white;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,8 +1,17 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { Container, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Timeline from './Timeline.js';
+import styled from 'styled-components';
+
+const Barogagi = styled.div`
+  p:hover {
+      font-weight: 900;
+      text-decoration: underline;
+  }
+`;
 
 // 이미지 - 반응형으로 화면 크기마다 나타낼 슬라이드 수 지정
 const responsive = {
@@ -30,6 +39,10 @@ function MainPage() {
     let [imgFade, setImgFade] = useState('');
     let [infoFade, setInfoFade] = useState('');
     let [infoTextFade, setInfoTextFade] = useState('');
+
+    let navigate = useNavigate();
+
+    let [isHovering, setIsHovering] = useState(false)
 
     // 텍스트, 이미지 - 애니메이션 효과
     useEffect(() => {
@@ -103,17 +116,59 @@ function MainPage() {
                 </div>
             </div>
 
-            {/* <Container className={`start ${infoTextFade} main-page_support`}>
+            <Container className={`start ${infoTextFade} main-page_support`}>
                 <h1 className="main-page_support-title">다양한 기술을 사용하며 성장하는 플랫폼</h1>
                 <p className="main-page_support-sub-title">Kelog는 기록과 협업을 통해 팀과 개인의 다양한 가능성을 의미 있는 성공으로 이끌어주는 공동체 입니다.</p>
-                <Row md={4}>
-                    <Col><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/640px-Node.js_logo.svg.png" width="150" height="100"/></Col>
-                    <Col><img src="" width="170" height="120"/></Col>
-                    <Col>Cloud</Col>
-                    <Col>Server</Col>
-                </Row>
-            </Container> */}
 
+                <div className="main-page_support-item-box"
+                    onMouseOver={() => { setIsHovering(true) }}
+                    onMouseOut={() => { setIsHovering(false) }}>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_target_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">프로젝트 소개 및 목표 설정</p></Barogagi>
+                                : <p className="main-page_support-item-title">프로젝트 소개 및 목표 설정</p>
+                        }
+                        <p>Kelog는 사용자가 자신의 아이디어와<br />업적을 기록하고 공유할 수 있는<br />블로그 플랫폼입니다.</p>
+                    </div>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_updated_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">프로젝트 진행 상황 업데이트</p></Barogagi>
+                                : <p className="main-page_support-item-title">프로젝트 진행 상황 업데이트</p>
+                        }
+                        <p>Kelog의 프로젝트 진행 상황을<br />업데이트하고 사용자와 혁신과 성장을<br />함께합니다.</p>
+                    </div>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_opinion_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">팀원들과의 의견 공유</p></Barogagi>
+                                : <p className="main-page_support-item-title">팀원들과의 의견 공유</p>
+                        }
+                        <p>Kelog는 팀원들과 의견을 주고받으며,<br />창의적인 아이디어를 형성하고 협력합니다.</p>
+                    </div>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_share_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">프로젝트 자료 및 리소스 공유</p></Barogagi>
+                                : <p className="main-page_support-item-title">프로젝트 자료 및 리소스 공유</p>
+                        }
+                        <p>Kelog는 프로젝트와 관련된 자료,<br /> 문서, 및 유용한 리소스를 공유하며<br /> 팀원들과 협업합니다.</p>
+                    </div>
+                </div>
+            </Container>
+
+            <div className="main-page_banner-wrap">
+                <img className="main-page_banner-img" src="./img/main_page_banner.jpg" />
+                <div className="main-page_banner-text">
+                    <text>함께할 준비가 되셨나요?<br/>Kelog와 프로젝트의 창을 열어보세요.<br/><br/></text>
+                    <Button variant="outline-light" onClick={()=>{navigate('./blog')}}>Blog 바로가기</Button>
+                </div>
+            </div>
         </>
     );
 }
