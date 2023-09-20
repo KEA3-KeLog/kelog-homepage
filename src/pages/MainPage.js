@@ -1,7 +1,8 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import Timeline from './Timeline.js';
 
 // 이미지 - 반응형으로 화면 크기마다 나타낼 슬라이드 수 지정
 const responsive = {
@@ -11,7 +12,8 @@ const responsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3
+        items: 3,
+        partialVisibilityGutter: 40 // this is needed to tell the amount of px that should be visible.
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -58,39 +60,60 @@ function MainPage() {
                 {/* 슬라이드 컴포넌트 */}
                 <Carousel
                     responsive={responsive}
+                    showDots={true}
                     arrows={false}
-                    infinite={true}
+                    partialVisible={true}
+                    draggable={false}
                     autoPlay={true}
-                    autoPlaySpeed={1}
-                    slidesToSlide={0.05}>
-                    {[1, 2, 3].map((a) => {
-                        console.log(a);
-                        // <img className="main-page_slide-image" src={`/img/고심${a}.jpg`} alt=""/>
-                    })}
-                    <img className="main-page_slide-image" src={`/img/고심1.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심2.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심3.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심4.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심5.jpg`} alt="" />
+                    customTransition="transform 3000ms ease-in-out"
+                    transitionDuration={1000}
+                >
+
+                    <img className="main-page_slide-image" src={`/img/main_page_img3.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img1.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img4.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img5.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img6.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img8.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img7.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img9.jpg`} alt="" />
                 </Carousel>
             </div>
 
             <div className={`start ${infoFade} main-page_info main-page_info-wrap`}>
-                
-                    <div className={`start ${infoTextFade} main-page_info-title`}>
-                        <h2 style={{fontWeight:'600'}}>Kelog의 비전</h2>
+
+                <div className={`start ${infoTextFade} main-page_info-title`}>
+                    <h2 style={{ fontWeight: '600', marginBottom: '70px' }}>Kelog는<br />협업과 기록으로<br />미래를 새롭게 열고자 합니다.</h2>
+                    <div className="main-page_info-item">
+                        <div className="main-page_info-item-title">비전 첫번째 ,</div>
+                        <span className="main-page_info-item-text-white">자유로운 지식 공유와 </span><span className="main-page_info-item-text-blue">아이디어 확장 </span>
                     </div>
-                
-                    <div className={`start ${infoTextFade} main-page_info-description`}>
-                        <h4 style={{fontWeight:'600'}}>협업의 강화</h4>
-                        <p>프로젝트와 업무 협업을 통해 <br/>아이디어를 현실로 만들 수 있도록 서로 돕습니다.</p>
-                        <h4 style={{fontWeight:'600'}}>창의성의 장소</h4>
-                        <p>Kelog는 다양한 분야와 배경을 가진<br/> 창조적인 개인과 팀이 <br/>아이디어를 교환하고 발전시킬 수 있는 <br/>공간입니다.</p>
-                        <h4 style={{fontWeight:'600'}}>지식의 공유</h4>
-                        <p>우리는 지식의 공유와 성장을 촉진합니다. <br/>블로그 프로젝트를 통해 <br/>지식을 공유하고 확장합니다.</p>
+                    <div className="main-page_info-item">
+                        <div className="main-page_info-item-title">비전 두번째 ,</div>
+                        <span className="main-page_info-item-text-white">새로운 스킬과 협업을 통한 </span><span className="main-page_info-item-text-blue">학습과 성장</span>
                     </div>
-                
+                    <div className="main-page_info-item">
+                        <div className="main-page_info-item-title">비전 세번째 ,</div>
+
+                        <span className="main-page_info-item-text-white">열린 커뮤니케이션을 통한 </span><span className="main-page_info-item-text-blue">성공적인 협업</span>
+                    </div>
+                </div>
+                <div className={`start ${infoTextFade} main-page_info-description`}>
+                    <Timeline />
+                </div>
             </div>
+
+            {/* <Container className={`start ${infoTextFade} main-page_support`}>
+                <h1 className="main-page_support-title">다양한 기술을 사용하며 성장하는 플랫폼</h1>
+                <p className="main-page_support-sub-title">Kelog는 기록과 협업을 통해 팀과 개인의 다양한 가능성을 의미 있는 성공으로 이끌어주는 공동체 입니다.</p>
+                <Row md={4}>
+                    <Col><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/640px-Node.js_logo.svg.png" width="150" height="100"/></Col>
+                    <Col><img src="" width="170" height="120"/></Col>
+                    <Col>Cloud</Col>
+                    <Col>Server</Col>
+                </Row>
+            </Container> */}
+
         </>
     );
 }
