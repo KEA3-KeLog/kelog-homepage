@@ -1,71 +1,76 @@
-# 팀 홈페이지를 제작하는 전 과정
-# Getting Started with Create React App
+# KEA 팀 홈페이지 제작
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+<img width="329" alt="image" src="/Users/yangks/Desktop/Projects/KEA testing/kelog-homepage/public/img/logo-nav.png" />
+</div>
+ 
+# KeLog Web Page
+> ** 가천대학교-카카오엔터프라이즈 아카데미 ** <br /> ** 개발기간: 2023.09.03 ~ **
 
-## Available Scripts
+## 배포 주소
+> 추후 추가 예정
 
-In the project directory, you can run:
+## 개발팀 소개
+| 양권상 | 박상웅 | 안현영 | 홍윤기 |
+|:-----------:|:--------:|:------:|:---------:|
+|<img width="160px" src="/Users/yangks/Desktop/Projects/KEA/testing/kelog-homepage/public/img/gwonsangprofile_img.png"/> | <img width="160px" src="/Users/yangks/Desktop/Projects/KEA/testing/kelog-homepage/public/img/Sangwongprofile_img.jpg" /> | <img width="160px" src="/Users/yangks/Desktop/Projects/KEA/testing/kelog-homepage/public/img/Hyeonprofile_img.jpg"/> | <img width="160px" src="/Users/yangks/Desktop/Projects/KEA/testing/kelog-homepage/public/img/Yungyiprofile_img.png" />|
+|[@gwon477](https://github.com/gwon477)|[@xxng1](https://github.com/xxng1)|[@An-hyeonyong](https://github.com/An-hyeonyong)|[@dbsrl1026](https://github.com/dbsrl1026)|
 
-### `npm start`
+## 프로젝트 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+카카오엔터프라이즈와 가천대학교 협업 아카데미 활동을 하면서 함께 활동하는 팀에 대한 소개와 활동 기간 내에 진행하는 프로젝트들을 기록하고 소개하는 웹 앱 입니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 시작 가이드
+### Requirements
+For building and running the application you need:
 
-### `npm test`
+- [Node.js v20.5.1] (https://nodejs.org/ca)
+- [Npm v10.1.0] (https://www.npmjs.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+```bash
+$ git clone https://github.com/KEA3-KeLog/kelog-homepage.git
+$ cd kelog-homepage
+```
 
-### `npm run build`
+### Backend
+```
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+```
+$ npm isntall
+$ npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Stacks 📌
 
-### `npm run eject`
+### Enviroment
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white)
+![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)    
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Config
+![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)        
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Development
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Communication
+![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 화면 구성
+|메인 페이지|팀원 페이지|프로젝트 페이지|
+|:---:|:---:|:----:|
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+## 주요 기능
+- react hooks 를 사용하여 animation 생성
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
