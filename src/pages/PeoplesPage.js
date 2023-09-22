@@ -1,25 +1,18 @@
 import { Container } from 'react-bootstrap';
 import { useState, useEffect, useCallback } from 'react';
 import './PageCss.css';
-import '../App.css';
 
 
 function PeoplesPage() {
-    let [first, setfirst] = useState('');
-    let [second, setsecond] = useState('');
-    let [third, setthird] = useState('');
+    let [title, setTitle] = useState('');
+    let [subTitle, setSubtitle] = useState('');
+    let [peopleList, setPeoplelist] = useState('');
 
     useEffect(() => {
-        setTimeout(() => { setfirst('end') }, 400);
-    }, [first])
-
-    useEffect(() => {
-        setTimeout(() => { setsecond('end') }, 500);
-    }, [second])
-
-    useEffect(() => {
-        setTimeout(() => { setthird('end') }, 700);
-    }, [third])
+        setTimeout(() => { setTitle('end') }, 400);
+        setTimeout(() => {setSubtitle('end')}, 550);
+        setTimeout(()=> {setPeoplelist('end')}, 700);
+    }, [title],[subTitle],[peopleList])
 
     const YangGit = useCallback(() => {
         window.open(
@@ -42,12 +35,12 @@ function PeoplesPage() {
     return (
         <Container>
             <div>
-                <div className={`start ${first}`}>
+                <div className={`start ${title}`}>
                     <h1 className='peoplespage_title'>
                         함께하는 사람들
                     </h1>
                 </div>
-                <div className={`start ${second}`}>
+                <div className={`start ${subTitle}`}>
                     <p className='peoplespage_subtitle'>
                         "조직의 위대함은 개인 혼자서는 불가능한 일을 가능하게 만드는 것에 있습니다.<br />
                         KeLog에서 좋은 사람들과 좋은 영향을 주고 받으며 불가능을 가능케하는 팀원들을 소개합니다.<br />
@@ -56,7 +49,7 @@ function PeoplesPage() {
                 </div>
             </div>
 
-            <div className={`start ${third}`}>
+            <div className={`start ${peopleList}`} >
                 <section className='peoplepage_list peoplepage_wrap'>
                     <div className='peoplepage_list_item_wrap'>
                         <div className='peoplepage_list_item peoplepage_list_item_portfolio'>

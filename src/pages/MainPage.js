@@ -1,7 +1,17 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { Container, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import Timeline from './Timeline.js';
+import styled from 'styled-components';
+
+const Barogagi = styled.div`
+  p:hover {
+      font-weight: 900;
+      text-decoration: underline;
+  }
+`;
 
 
 // 이미지 - 반응형으로 화면 크기마다 나타낼 슬라이드 수 지정
@@ -12,7 +22,8 @@ const responsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3
+        items: 3,
+        partialVisibilityGutter: 40 // this is needed to tell the amount of px that should be visible.
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -31,6 +42,9 @@ function MainPage() {
     let [infoFade, setInfoFade] = useState('');
     let [infoTextFade, setInfoTextFade] = useState('');
 
+    let navigate = useNavigate();
+
+    let [isHovering, setIsHovering] = useState(false)
     // 텍스트, 이미지 - 애니메이션 효과
     useEffect(() => {
 
@@ -62,39 +76,105 @@ function MainPage() {
                 {/* 슬라이드 컴포넌트 */}
                 <Carousel
                     responsive={responsive}
+                    showDots={true}
                     arrows={false}
-                    infinite={true}
+                    partialVisible={true}
+                    draggable={false}
                     autoPlay={true}
-                    autoPlaySpeed={1}
-                    slidesToSlide={0.05}>
-                    {[1, 2, 3].map((a) => {
-                        console.log(a);
-                        // <img className="main-page_slide-image" src={`/img/고심${a}.jpg`} alt=""/>
-                    })}
-                    <img className="main-page_slide-image" src={`/img/고심1.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심2.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심3.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심4.jpg`} alt="" />
-                    <img className="main-page_slide-image" src={`/img/고심5.jpg`} alt="" />
+                    customTransition="transform 3000ms ease-in-out"
+                    transitionDuration={1000}
+                >
+
+                    <img className="main-page_slide-image" src={`/img/main_page_img3.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img1.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img4.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img5.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img6.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img8.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img7.jpg`} alt="" />
+                    <img className="main-page_slide-image" src={`/img/main_page_img9.jpg`} alt="" />
                 </Carousel>
             </div>
 
             <div className={`start ${infoFade} main-page_info main-page_info-wrap`}>
 
                 <div className={`start ${infoTextFade} main-page_info-title`}>
-                    <h2 style={{ fontWeight: '600' }}>Kelog의 비전</h2>
-                </div>
 
+                    <h2 style={{ fontWeight: '600', marginBottom: '70px' }}>Kelog는<br />협업과 기록으로<br />미래를 새롭게 열고자 합니다.</h2>
+                    <div className="main-page_info-item">
+                        <div className="main-page_info-item-title">비전 첫번째 ,</div>
+                        <span className="main-page_info-item-text-white">자유로운 지식 공유와 </span><span className="main-page_info-item-text-blue">아이디어 확장 </span>
+                    </div>
+                    <div className="main-page_info-item">
+                        <div className="main-page_info-item-title">비전 두번째 ,</div>
+                        <span className="main-page_info-item-text-white">새로운 스킬과 협업을 통한 </span><span className="main-page_info-item-text-blue">학습과 성장</span>
+                    </div>
+                    <div className="main-page_info-item">
+                        <div className="main-page_info-item-title">비전 세번째 ,</div>
+
+                        <span className="main-page_info-item-text-white">열린 커뮤니케이션을 통한 </span><span className="main-page_info-item-text-blue">성공적인 협업</span>
+                    </div>
+                </div>
                 <div className={`start ${infoTextFade} main-page_info-description`}>
-                    <h4 style={{ fontWeight: '600' }}>협업의 강화</h4>
-                    <p>프로젝트와 업무 협업을 통해 <br />아이디어를 현실로 만들 수 있도록 서로 돕습니다.</p>
-                    <h4 style={{ fontWeight: '600' }}>창의성의 장소</h4>
-                    <p>Kelog는 다양한 분야와 배경을 가진<br /> 창조적인 개인과 팀이 <br />아이디어를 교환하고 발전시킬 수 있는 <br />공간입니다.</p>
-                    <h4 style={{ fontWeight: '600' }}>지식의 공유</h4>
-                    <p>우리는 지식의 공유와 성장을 촉진합니다. <br />블로그 프로젝트를 통해 <br />지식을 공유하고 확장합니다.</p>
+                    <Timeline />
                 </div>
 
             </div>
+
+            <Container className={`start ${infoTextFade} main-page_support`}>
+                <h1 className="main-page_support-title">다양한 기술을 사용하며 성장하는 플랫폼</h1>
+                <p className="main-page_support-sub-title">Kelog는 기록과 협업을 통해 팀과 개인의 다양한 가능성을 의미 있는 성공으로 이끌어주는 공동체 입니다.</p>
+
+                <div className="main-page_support-item-box"
+                    onMouseOver={() => { setIsHovering(true) }}
+                    onMouseOut={() => { setIsHovering(false) }}>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_target_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">프로젝트 소개 및 목표 설정</p></Barogagi>
+                                : <p className="main-page_support-item-title">프로젝트 소개 및 목표 설정</p>
+                        }
+                        <p>Kelog는 사용자가 자신의 아이디어와<br />업적을 기록하고 공유할 수 있는<br />블로그 플랫폼입니다.</p>
+                    </div>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_updated_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">프로젝트 진행 상황 업데이트</p></Barogagi>
+                                : <p className="main-page_support-item-title">프로젝트 진행 상황 업데이트</p>
+                        }
+                        <p>Kelog의 프로젝트 진행 상황을<br />업데이트하고 사용자와 혁신과 성장을<br />함께합니다.</p>
+                    </div>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_opinion_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">팀원들과의 의견 공유</p></Barogagi>
+                                : <p className="main-page_support-item-title">팀원들과의 의견 공유</p>
+                        }
+                        <p>Kelog는 팀원들과 의견을 주고받으며,<br />창의적인 아이디어를 형성하고 협력합니다.</p>
+                    </div>
+                    <div className="main-page_support-item">
+                        <img src="./img/main_page_support_share_icon.png" width="100" height="100" />
+                        {
+                            isHovering
+                                ? <Barogagi><p className="main-page_support-item-title">프로젝트 자료 및 리소스 공유</p></Barogagi>
+                                : <p className="main-page_support-item-title">프로젝트 자료 및 리소스 공유</p>
+                        }
+                        <p>Kelog는 프로젝트와 관련된 자료,<br /> 문서, 및 유용한 리소스를 공유하며<br /> 팀원들과 협업합니다.</p>
+                    </div>
+                </div>
+            </Container>
+
+            <div className="main-page_banner-wrap">
+                <img className="main-page_banner-img" src="./img/main_page_banner.jpg" />
+                <div className="main-page_banner-text">
+                    <text>함께할 준비가 되셨나요?<br/>Kelog와 프로젝트의 창을 열어보세요.<br/><br/></text>
+                    <Button variant="outline-light" onClick={()=>{navigate('./blog')}}>Blog 바로가기</Button>
+                </div>
+            </div>
+
         </>
     );
 }
